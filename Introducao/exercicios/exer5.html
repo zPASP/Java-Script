@@ -1,0 +1,42 @@
+<html>
+    <head>
+        <title>Curso JavaScript</title>
+    </head>
+    <body>
+
+        <script>
+            var usuario = [
+                {
+                    nome: "Diego",
+                    habilidades: ["Javascript", "ReactJS", "Redux"]
+                },
+                {
+                    nome: "Pedro",
+                    habilidades: ["Java","HTML","TADS"]
+                },
+                {
+                    nome: "Gabriel",
+                    habilidades: ["VueJS","Ruby on Rails","Elixir","DeveTer Mais"]
+                }
+            ];
+
+            function mostraUsuarios (usuarios){
+                
+                for (var i = 0; i < usuarios.length ; i++){
+                    var habilidade = usuarios[i].habilidades;
+                    
+                    //for (var value of usuarios[i].habilidades){
+                    //    habilidade += [value];
+                    // }
+                    console.log("O "+usuarios[i].nome+" possui as habilidades: "+habilidade.join(' ,'))
+
+                }
+                
+            }
+
+            //console.log (usuario[0].habilidades)
+            mostraUsuarios(usuario);
+
+        </script>
+    </body>
+</html>

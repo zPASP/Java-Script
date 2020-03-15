@@ -1,0 +1,49 @@
+<html>
+    <head>
+        <title>Curso JavaScript</title>
+    </head>
+    <body>
+        
+        <input type="text" name="nome">
+        <button onClick="adicionar()">Adicionar</button><br>
+
+        <ul>
+        </ul>
+
+        <script>
+            
+            var nomes = ["Pedro", "Alexandre", "Arthur"];
+            var listaElement = document.querySelector('ul');
+            
+            listarVetor();
+            
+            function listarVetor () {
+                for (nome of nomes) {
+                    console.log('ENTROU')
+                    var lineElement = document.createElement('li');
+                    var textElement = document.createTextNode(nome);
+                    
+                    lineElement.appendChild(textElement);
+                    listaElement.appendChild(lineElement);
+                }
+            }
+
+            function limpaLinhas () {
+                var removerLine = document.querySelectorAll('li')
+                for (removendoLinhas of removerLine){
+                    listaElement.removeChild(removendoLinhas)
+                }
+            }
+
+            function adicionar () {
+                console.log("CHAMOU")
+                var nomeAdd = document.querySelector('input')
+                nomes.push(nomeAdd.value)
+                limpaLinhas();
+                console.log(nomes)
+                listarVetor();
+            }
+
+        </script>
+    </body>
+</html>

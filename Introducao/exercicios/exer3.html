@@ -1,0 +1,21 @@
+<html>
+    <head>
+        <title>Curso JavaScript</title>
+    </head>
+    <body>
+
+        <script>
+            function temHabilidades (skills) {
+                resultado = skills.indexOf("Javascript",0);
+                if (resultado > -1){//caso o valor seja diferente de -1 é porque existe dentro do array
+                    return true;
+                }else {
+                    return false;
+                }
+            }
+
+            var skills = ["Javascript", "ReactJS", "React Native"];
+            console.log(temHabilidades(skills));
+        </script>
+    </body>
+</html>

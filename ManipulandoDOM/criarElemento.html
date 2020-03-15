@@ -1,0 +1,31 @@
+<html>
+    <head>
+        <title>Curso JavaScript</title>
+    </head>
+    <body>
+        <div id="app">
+            <input id="nome" />
+        </div>
+
+
+        <script>
+           var linkElement = document.createElement('a');
+           linkElement.setAttribute('href', 'http://google.com.br');
+           linkElement.setAttribute('title', 'Acessar google');
+
+
+           var textElement = document.createTextNode('Acessar site google');
+           linkElement.appendChild(textElement);
+
+           var containerElement = document.querySelector('#app');
+           containerElement.appendChild(linkElement)
+
+           //removendo elemento da pagina
+
+           var inputElement = document.querySelector('#nome');
+           containerElement.removeChild(inputElement); // linha que removo o filho da pagina"no caso o input name">
+          
+
+        </script>
+    </body>
+</html>

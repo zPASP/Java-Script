@@ -1,0 +1,38 @@
+<html>
+    <head>
+        <title>Curso JavaScript</title>
+    </head>
+    <body>
+
+        <button class="botao">CLIQUE AQUI</button>
+        <div id="quadrados"></div>
+
+        <script>
+            var buttonElement = document.querySelector('.botao');
+            var containerElement = document.getElementById('quadrados');
+            
+            function getRandomColor() {
+                var letters = '0123456789ABCDEF';
+                var color = '#';
+                for (var i = 0; i < 6; i++) {
+                    color += letters[Math.floor(Math.random() * 16)];
+                }
+                return color;
+            }
+
+            buttonElement.onclick = function () {
+                var quadradoElement = document.createElement('div');
+
+                quadradoElement.style.width = '100px';
+                quadradoElement.style.height = '100px';
+                quadradoElement.style.backgroundColor = '#F00';
+
+                quadradoElement.onmouseover = function () {
+                    quadradoElement.style.backgroundColor = getRandomColor();
+                }
+
+                containerElement.appendChild(quadradoElement)                
+            }
+        </script>
+    </body>
+</html>
