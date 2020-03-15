@@ -30,9 +30,22 @@ function loadList () {
     listElement.appendChild(lineElement);
 }
 
+function renderError(loading) {
+    renderList();
+
+    var textElement = document.createTextNode('Erro!');
+    var errorElement = document.createElement('li');
+
+    errorElement.style.color = "#F00";
+
+    errorElement.appendChild(textElement);
+    listElement.appendChild(errorElement);
+  }
+
 function addUser () {
     var nameUser = inputElement.value
     inputElement.value = '';
+    if (!nameUser) return;
     loadList();
     
     axios.get(('https://api.github.com/users/'+nameUser))
@@ -47,6 +60,7 @@ function addUser () {
         .catch(function(error){
             alert('Usuario Digitado é invalido')
             console.log('nao existe')
+            renderError(); // complemento no codigo de erro
         });
 
 }
